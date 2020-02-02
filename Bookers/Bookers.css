@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: #808080;
+}
+
+main {
+  padding-left: 30px;
+  padding-top:  22px;
+  font-family: sans-serif;
+}
+
+.subject {
+  font-size:27px ;
+  font-weight: bold;
+}
+
+.text {
+  padding-left: 37px;
+  font-size: 14px;
+}

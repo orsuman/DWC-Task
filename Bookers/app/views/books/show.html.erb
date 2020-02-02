@@ -1,0 +1,9 @@
+<main class="show">
+<b>Title:</b>&nbsp;<%= @book.title %><br>
+
+<b>Body:</b>&nbsp;<%= @book.body %>
+</main>
+
+<div class="link">
+<%= link_to "Edit", edit_book_path(@book) %> | <%= link_to "Back", root_path %>
+</div>
