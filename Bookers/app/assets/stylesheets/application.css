@@ -20,9 +20,14 @@
   font-family: sans-serif;
 }
 
-a {
-color:gray;
-text-decoration:underline;
+a:link {
+color: black;
+text-decoration: underline;
+}
+
+a:visited {
+color: gray;
+text-decoration: underline;
 }
 
 header {
@@ -32,12 +37,33 @@ header {
 	font-size: 27px;
 }
 
+.top {
+  padding-left: 30px;
+  padding-top:  22px;
+  font-family: sans-serif;
+}
+
+.top-subject {
+  font-size:27px ;
+  font-weight: bold;
+}
+
+.top-text {
+  padding-left: 37px;
+  font-size: 14px;
+}
+
 .alert {
 	padding-top: 30px;
 	padding-left: 40px;
 	color: green;
 }
-
+.error {
+	color: red;
+	padding-bottom:10px;
+	font-size: 16px ;
+	line-height: 28px;
+}
 .link {
 	padding-left: 30px;
 	line-height: 50px;
@@ -52,7 +78,6 @@ header {
 	border-collapse: separate;
 	border-spacing: 12px 10px;
 }
-
 .show {
 	padding-left: 60px;
 	padding-top: 15px;
@@ -63,10 +88,11 @@ header {
 .edit {
 	padding-left: 35px;
 	padding-top:25px;
-	font-size: 14px
+	font-size: 15px
 }
 
 .new {
 	padding-top: 20px;
 	padding-left: 10px;
+	font-size: 15px;
 }
