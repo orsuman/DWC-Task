@@ -16,7 +16,7 @@
     <%= form_for(@book) do |f| %>
 
      <% if @book.errors.any? %>
-      <div class= "error"
+      <div class= "error">
       <div id="error_explanation">
       <h3>
       <%= pluralize(@book.errors.count, "error") %>
