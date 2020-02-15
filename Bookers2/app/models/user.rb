@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :books, dependent: :destroy
+  has_many :comments, dependent: :destroy
+
   attachment :profile_image
 
   #名前は空白ダメ、他ユーザーと重複ダメ、２文字以上２０文字までと設定した。
