@@ -30,7 +30,9 @@
 
     <br>
     <% if @user.id == current_user.id %>
-        <%= f.submit "Update User" %><% end %>
+        <%= f.submit "Update User" %><% end %><br><br>
+
+        <%= link_to "パスワードを変更する", edit_user_registration_path(current_user) %>
 
     <% end %>
   </div>
