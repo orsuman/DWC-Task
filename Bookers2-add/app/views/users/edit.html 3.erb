@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+  <div class="col-lg-1"></div>
+  <div class="col-lg-11">
+
+<h2>User info</h2>
+
+    <%= form_for(@user) do |f| %>
+    <% if @user.errors.any? %>
+      <div class= "error">
+      <div id="error_explanation">
+      <h3>
+      <%= pluralize(@user.errors.count, "error") %>
+      prohibited this book from being saved:
+      </h3>
+      <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+     </div></div>
+    <% end %>
+
+    <h5>Name</h5>
+        <%= f.text_field :name %>
+
+    <h5>Image</h5>
+        <%= f.attachment_field :profile_image %>
+
+    <h5>Introduction</h5>
+        <%= f.text_area :introduction %>
+
+    <br>
+    <% if @user.id == current_user.id %>
+        <%= f.submit "Update User" %><% end %><br><br>
+
+        <%= link_to "パスワードを変更する", edit_user_registration_path(current_user) %>
+
+    <% end %>
+  </div>
+</div>
