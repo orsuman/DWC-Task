@@ -25,9 +25,8 @@ class UsersController < ApplicationController
   		render 'edit'
   	end
   end
+
   private
-#今回はなぜ、privateが要らないのだろうか？？恐らく、参照するもの(user_paramsのこと)が必要？
-  def user_params
   	params.require(:user).permit(:name, :introduction, :profile_image)
   end
   #url直接防止　メソッドを自己定義してbefore_actionで発動。
