@@ -54,7 +54,7 @@
                         <%= attachment_image_tag comment.user, :profile_image, :fill, 100, 100,fallback: "no_image.jpg",size:'40x40', radius:'50%' %>　<b><%= comment.user.name %></b>
                           <span class="comment-date pull-right"><%= comment.created_at.strftime('%Y-%m-%d %H:%M') %></span>
                     <div class="comment-entry">
-                         　<%= comment.comment %>　
+                         　<%= comment.comment %>
                          <% if comment.user == current_user %>
                          　<br><%=link_to "削除する", comment_path(comment.id), method: :delete, "data-confirm" => "削除して宜しいでしょうか？", class:"pull-right" %><% end %>
                   </div>
