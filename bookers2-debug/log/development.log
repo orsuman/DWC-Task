@@ -30192,3 +30192,95 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 158ms (Views: 127.6ms | ActiveRecord: 9.2ms)
 
 
+Started GET "/users/4" for 10.0.2.2 at 2020-03-01 15:41:06 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+  
+SyntaxError (/vagrant/bookers2-debug/app/controllers/users_controller.rb:40: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/users_controller.rb:40: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/users/4" for 10.0.2.2 at 2020-03-01 15:41:25 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+  
+SyntaxError (/vagrant/bookers2-debug/app/controllers/users_controller.rb:40: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/users_controller.rb:40: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/users/4" for 10.0.2.2 at 2020-03-01 15:41:26 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+SyntaxError (/vagrant/bookers2-debug/app/controllers/users_controller.rb:40: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/users_controller.rb:40: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/users/4" for 10.0.2.2 at 2020-03-01 15:41:27 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+SyntaxError (/vagrant/bookers2-debug/app/controllers/users_controller.rb:40: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/users_controller.rb:40: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/users/4" for 10.0.2.2 at 2020-03-01 15:41:47 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+  
+SyntaxError (/vagrant/bookers2-debug/app/controllers/users_controller.rb:40: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/users_controller.rb:40: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/users/4" for 10.0.2.2 at 2020-03-01 15:41:47 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+SyntaxError (/vagrant/bookers2-debug/app/controllers/users_controller.rb:40: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/users_controller.rb:40: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/users" for 10.0.2.2 at 2020-03-01 15:41:54 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+SyntaxError (/vagrant/bookers2-debug/app/controllers/users_controller.rb:40: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/users_controller.rb:40: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/users" for 10.0.2.2 at 2020-03-01 15:42:21 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+  
+SyntaxError (/vagrant/bookers2-debug/app/controllers/users_controller.rb:40: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/users_controller.rb:40: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/users" for 10.0.2.2 at 2020-03-01 15:42:22 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+SyntaxError (/vagrant/bookers2-debug/app/controllers/users_controller.rb:40: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/users_controller.rb:40: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/users" for 10.0.2.2 at 2020-03-01 15:43:14 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_profile.html.erb (528.4ms)
+  Rendered books/_newform.html.erb (22.8ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:27
+  Rendered users/index.html.erb within layouts/application (575.3ms)
+Completed 200 OK in 995ms (Views: 949.0ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/users" for 10.0.2.2 at 2020-03-01 15:44:17 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_profile.html.erb (452.2ms)
+  Rendered books/_newform.html.erb (15.8ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:27
+  Rendered users/index.html.erb within layouts/application (486.8ms)
+Completed 200 OK in 811ms (Views: 759.1ms | ActiveRecord: 7.1ms)
+
+
