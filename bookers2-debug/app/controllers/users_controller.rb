@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   	@users = User.all #一覧表示するためにUserモデルのデータを全て変数に入れて取り出す。
   	@book = Book.new #new bookの新規投稿で必要（保存処理はbookコントローラー側で実施）
     @user = current_user
-
+  end
   def edit
   	@user = User.find(params[:id])
   end
@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   		render 'edit'
   	end
   end
-
+  private
 #今回はなぜ、privateが要らないのだろうか？？恐らく、参照するもの(user_paramsのこと)が必要？
   def user_params
   	params.require(:user).permit(:name, :introduction, :profile_image)
@@ -36,7 +36,6 @@ class UsersController < ApplicationController
   	if params[:id].to_i != current_user.id
   		redirect_to user_path(current_user)
   	end
-   end
- end
+  end
 
 end
