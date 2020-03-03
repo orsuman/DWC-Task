@@ -12,10 +12,11 @@ class BookCommentsController < ApplicationController
         redirect_to book_path(book)
     end
     def destroy
+        book = Book.find(params[:book_id])
         comment = BookComment.find(params[:id])
         comment.destroy
         flash[:success] = 'You have destroyed successfully.'
-        redirect_to books_path
+        redirect_to book_path(book)
     end
     private
     def book_comment_params

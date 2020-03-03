@@ -48,7 +48,7 @@
                     <div class="comment-entry">
                          　<%= comment.comment %>
                          <% if comment.user == current_user %>
-                         　<br><%=link_to "削除する", book_comment_path(comment.id), method: :delete, "data-confirm" => "削除して宜しいでしょうか？", class:"pull-right" %><% end %>
+                         　<br><%=link_to "削除する", book_book_comment_path(@book.id, comment.id), method: :delete, "data-confirm" => "削除して宜しいでしょうか？", class:"pull-right" %><% end %>
                   </div>
                 </div>
              </div>

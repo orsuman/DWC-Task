@@ -19,12 +19,11 @@ Rails.application.routes.draw do
   get '/users/sign_out' => 'devise/sessions#destroy'
   end
 
+  #rails routesで何のidが使えるか確認
+  #resource"s"とすることで、idを生み出してくれる
   resources :books do
-      resource :book_comments, only: [:create]
+    resources :book_comments, only: [:create, :destroy]
   end
-
-  #コメントを削除するにはIDが必要だから分ける？？
-  resources :book_comments, only: [:destroy]
 
   resources :users, only: [:index, :show, :edit, :update]
 
