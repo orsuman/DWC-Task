@@ -3,7 +3,8 @@
   <div class="col-xs-10">
 
     <h2><%= @title %></h2>
-           <br><br>
+  <% if @users.count > 0 %>
+   <br><br>
     <table ~~~ class="table">
           <colgroup>
             <col style="width:10%;">
@@ -30,6 +31,9 @@
       <% end %>
     </table>
 
+  <% else %>
+  　<h3>ユーザーはいません</h3>
+  <% end %>
       <br>
     <%= link_to 'Back to MyPage', user_path(current_user), style:"color:#d3d3d3; font-size:20px;" %>
   </div>
