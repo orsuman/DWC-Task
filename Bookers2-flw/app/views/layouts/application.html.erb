@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'  %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <title>Bookers</title>
+</head>
+
+<body>
+  <header>
+  <nav class="navbar p-10" style="background-color: black;">
+    <div class="container">
+    <div class="row">
+       <div class="col-lg-7" style="color:white; font-size:20px;">Bookers</div>
+
+       <div class="col-lg-5, navbar-right" style="font-size:18px;">
+
+      <% if user_signed_in? %>
+
+          <%= link_to user_path(current_user.id) do %><span class="glyphicon glyphicon-home" aria-hidden="true"> Home</span><% end %>&nbsp;&nbsp;&nbsp;
+          <%= link_to users_path do %><span class="glyphicon glyphicon-user" aria-hidden="true"> Users</span><% end %>&nbsp;&nbsp;&nbsp;
+          <%= link_to books_path do %><span class="glyphicon glyphicon-book" aria-hidden="true"> Books</span><% end %>&nbsp;&nbsp;&nbsp;
+          <%= link_to destroy_user_session_path, method: :delete do %><span class="glyphicon glyphicon-log-out" aria-hidden="true"> logout</span><% end %>
+
+      <% else %>
+          <%= link_to root_path do %><span class="glyphicon glyphicon-home" aria-hidden="true"> Home</span><% end %>&nbsp;&nbsp;&nbsp;
+          <%= link_to home_about_path do %><span class="glyphicon glyphicon-link" aria-hidden="true"> About</span><% end %>&nbsp;&nbsp;&nbsp;
+          <%= link_to new_user_registration_path do %><span class="glyphicon glyphicon-edit" aria-hidden="true"> Sign up</span><% end %>&nbsp;&nbsp;&nbsp;
+          <%= link_to new_user_session_path do %><span class="glyphicon glyphicon-log-in" aria-hidden="true"> login</span><% end %>
+      <% end %>
+        </div>
+    </nav>
+  </header>
+
+  <main>
+      <div class="container">
+            <% flash.each do |msg_class, msg| %>
+            <div class="alert alert-<%= msg_class %>" ><%= msg %></div>
+            <% end %>
+      </div>
+    <%= yield %>
+  </main>
+
+   <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8"></div>
+            <div class="col-lg-4">
+             Copyright © 2020 Infratop.inc All Rights Reserved.
+            </div>
+    </footer>
+
+</body>
+</html>
