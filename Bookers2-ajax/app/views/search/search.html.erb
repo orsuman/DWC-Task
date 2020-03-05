@@ -1,0 +1,52 @@
+<div class="container">
+<div class="row">
+  <div class="col-xs-2"></div>
+
+<% if @model == 'user' %>
+  <h3>Users search for '<%= @content %>'</h3>
+            <table ~~~ class="table">
+               <colgroup>
+                 <col style="width:10%;">
+                 <col style="width:20%;">
+                 <col style="width:20%;">
+                 <col style="width:20%;">
+                 <col style="width:25%;">
+                 <col style="width:5%;">
+               </colgroup>
+              <tr><th></th> <th>name</th> <th></th><th></th><th></th><th></th></tr>
+                <% @datas.each do |user| %>
+                 <tr align="left">
+                  <td><%= attachment_image_tag user, :profile_image, :fill, 45, 45,fallback: "no_image.jpg",size:'45x45' %></td><td><%= user.name %></td>
+                  <td align="center">フォロー数：<%= user.follower.count %></td>
+                  <td align="center">フォロワー数：<%= user.followed.count %></td>
+                  <td align="center"><% if user != current_user %>
+                        <% if current_user.following?(user) %>
+                          <%= link_to 'フォローを外す', unfollow_path(user.id), method: :post, "data-confirm"  => "Are you sure ?", style:"color:#87cefa;"  %>
+                        <% else %>
+                          <%= link_to 'フォローする', follow_path(user.id), method: :post, style:"color:#0000cd;"%>
+                        <% end %><% end %></td>
+                  <td><%= link_to "Show",user_path(user.id) %></td>
+              </tr>
+                <% end %>
+            </table>
+<% else @model == 'books' %>
+  <h3>Books search for '<%= @content %>'</h3>
+            <table ~~~ class="table">
+               <colgroup>
+                 <col style="width:10%;">
+                 <col style="width:20%;">
+                 <col style="width:45%;">
+                 <col style="width:10%;">
+                 <col style="width:15%;">
+               </colgroup>
+               <tr><th></th> <th>Title</th><th>Opinion</th>　<th></th><th></th></tr>
+                 <% @datas.each do |book| %>
+               <tr align="left">
+                <td><%= link_to user_path(book.user) do %><%= attachment_image_tag book.user, :profile_image, :fill, 45, 45, fallback: "no_image.jpg",size:'45x45' %><% end %></td>
+                <td><%= link_to book_path(book.id) do %><%= book.title %><% end %></td><td><%= book.body %></td>
+                <td><div align="center"><%= render 'favorites/favorite', book: book %></div></td>
+                <td>コメント数：<%= book.book_comments.count %></td>
+                </tr>
+                <% end %>
+            </table>
+  <% end %>

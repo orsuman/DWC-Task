@@ -1,0 +1,11 @@
+<span class="favorite-link" id="favorite-link-<%= book.id %>">
+  <% if current_user.favorites.find_by(book_id: book.id) %>
+    <%= link_to destroy_path(book.id), method: :delete, remote: true do %>
+    <i class="fa fa-heart good" aria-hidden="true" style="color: red;">
+    <%= book.favorites.count %></i><% end %>
+  <% else %>
+    <%= link_to create_path(book.id), method: :post, remote:true do %>
+    <i class="fa fa-heart-o good" aria-hidden="true">
+    <%= book.favorites.count %></i><% end %>
+  <% end %>
+</span>
