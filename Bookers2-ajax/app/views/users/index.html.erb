@@ -10,16 +10,18 @@
             <table ~~~ class="table">
                <colgroup>
                  <col style="width:10%;">
-                 <col style="width:20%;">
-                 <col style="width:20%;">
-                 <col style="width:20%;">
-                 <col style="width:25%;">
+                 <col style="width:15%;">
+                 <col style="width:16%;">
+                 <col style="width:18%;">
+                 <col style="width:18%;">
+                 <col style="width:18%;">
                  <col style="width:5%;">
                </colgroup>
-              <tr><th></th> <th>name</th> <th></th><th></th><th></th><th></th></tr>
+              <tr><th></th> <th>name</th> <th></th><th></th><th></th><th></th><th></th></tr>
                 <% @users.each do |user| %>
                  <tr align="left">
                   <td><%= attachment_image_tag user, :profile_image, :fill, 45, 45,fallback: "no_image.jpg",size:'45x45' %></td><td><%= user.name %></td>
+                  <td align="center">投稿数：<%= user.books.count %></td>
                   <td align="center">フォロー数：<%= user.follower.count %></td>
                   <td align="center">フォロワー数：<%= user.followed.count %></td>
                   <td align="center"><% if user != current_user %>

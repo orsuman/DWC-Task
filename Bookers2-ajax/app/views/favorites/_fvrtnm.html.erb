@@ -1,0 +1,8 @@
+<span id="favorite-cnt" >
+	<% if book.favorites.count > 0 %>
+        <i class="fa fa-heart good" style="color: red;"></i>いいね！した人：
+           <% book.favorites.each do |fav| %>
+            <%= fav.user.name %>&nbsp;さん&nbsp;&nbsp;
+           <% end %>
+    <% end %>
+</span>

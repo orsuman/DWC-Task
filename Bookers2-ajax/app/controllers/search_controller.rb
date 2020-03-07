@@ -1,6 +1,6 @@
 class SearchController < ApplicationController
   def search
-	@model = params["search"]["model"]
+	  @model = params["search"]["model"]
     @content = params["search"]["content"]
     @how = params["search"]["how"]
     @datas = search_for(@model, @content, @how)

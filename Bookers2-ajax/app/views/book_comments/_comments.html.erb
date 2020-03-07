@@ -1,14 +1,14 @@
-<div id="comment-js">
+<div id="comment-<%= @book.id %>">
   <%= form_with model:[book, com], remote: true do |f| %>
     <%= f.text_area :comment, rows:'2', class: "form-control",placeholder: "コメントする ※150文字以内" %>
     <%= f.submit "投稿する", class: "mt-10 pull-right" %>
   <% end %>
     <br><br>
-<div class="float-wrapper">
-  <h4 class="comment-count"><%= book.book_comments.count %>件のコメント</h4>
-</div>
+
+<% if book.book_comments.count>0 %>
+  <h5><%= book.book_comments.count %>件のコメント</h5>
 <div>
-  <i id="comments"></i>
+  <i id="comments_comment"></i>
     <% book.book_comments.each do |comment| %>
       <div class="comment-text">
           <div class="comment-author clearfix">
@@ -17,10 +17,13 @@
           <div class="comment-entry">
             <%= comment.comment %>
               <% if comment.user == current_user %>
-                <br><%=link_to "削除する", book_book_comment_path(book.id, comment.id), method: :delete,remote: true, "data-confirm" => "削除して宜しいでしょうか？", class:"pull-right" %>
+                <br><%=link_to "削除する", book_book_comment_path(book.id, comment.id), method: :delete, remote: true, "data-confirm" => "削除して宜しいでしょうか？", class:"pull-right" %>
               <% end %>
           </div></div>
+        <% end %>
       </div>
-    <% end %>
   </div>
+<% else %>
+  <h5>現在、コメントはありません</h5>
+<% end %>
 </div>

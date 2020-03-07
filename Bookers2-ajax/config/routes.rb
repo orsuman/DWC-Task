@@ -9,9 +9,6 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  post   '/favorite/:book_id' => 'favorites#create',   as: 'create'
-  delete '/favorite/:book_id' => 'favorites#destroy', as: 'destroy'
-
   post 'follow/:id' => 'relationships#create', as: 'follow' # フォローする
   post 'unfollow/:id' => 'relationships#destroy', as: 'unfollow' # フォロー外す
 
@@ -28,6 +25,7 @@ Rails.application.routes.draw do
   #bookの場合new.htmlないしnew_book_pathは不要のなので除く
   resources :books, only: [:index, :create, :show, :edit, :update, :destroy] do
     resources :book_comments, only: [:create, :destroy]
+    resource :favorites, only: [:create, :destroy]
   end
 
   resources :users, only: [:index, :show, :edit, :update] do

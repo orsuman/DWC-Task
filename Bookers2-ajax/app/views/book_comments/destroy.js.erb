@@ -1,1 +1,2 @@
-$('#comment-js').html("<%= j(render 'book_comments/comments', book: @book, com: @comment ) %>");
+$('#comment-<%= @book.id %>').html("<%= j(render 'book_comments/comments', book: @book, com: @comment ) %>");
+$('#cmt-cnt').html("<%= j(render 'book_comments/cmtcnt', book: @book) %>");

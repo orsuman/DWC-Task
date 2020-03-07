@@ -44,15 +44,10 @@
 
 
       <%= render 'favorites/favorite', book: @book %>
+      <%= render 'Book_comments/cmtcnt', book: @book %>
+      <br>
 
-      <p class="fa fa-comment"></p>
-      <a href="#comments"><span class="good"><%= @book.book_comments.count %>コメント</span></a><br>
-      <% if @book.favorites.count > 0 %>
-        <i class="fa fa-heart good" style="color: red;"></i>いいね！した人：
-           <% @book.favorites.each do |fav| %>
-            <%= fav.user.name %>&nbsp;さん&nbsp;&nbsp;
-           <% end %>
-      <% end %>
+      <%= render 'favorites/fvrtnm', book: @book %>
 
       <%= render 'book_comments/comments', book: @book, com: @comment %>
 

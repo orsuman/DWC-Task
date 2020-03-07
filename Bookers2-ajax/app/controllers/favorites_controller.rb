@@ -15,6 +15,5 @@ class FavoritesController < ApplicationController
     private
     def set_variables
         @book = Book.find(params[:book_id])
-        @id_name = "#favorite-link-#{@book.id}"
     end
 end

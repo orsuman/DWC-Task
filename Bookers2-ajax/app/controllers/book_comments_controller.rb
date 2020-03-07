@@ -4,15 +4,20 @@ class BookCommentsController < ApplicationController
   before_action :authenticate_user!
 
 	def create
+        #非同期通信で使う為、インスタンス変数にする
         @book = Book.find(params[:book_id])
-        @comment = current_user.book_comments.new(book_comment_params)
-        @comment.book_id = @book.id
-        @comment.save
+        #以下は.非同期通信のインスタンス変数で使わないから、ローカル変数にする
+        comment = current_user.book_comments.new(book_comment_params)
+        comment.book_id = @book.id
+        comment.save
+        #非同期通信でコメント投稿する際、2回目以降は以下のインスタンス変数を使う
+        @comment =BookComment.new
     end
     def destroy
         @book = Book.find(params[:book_id])
-        @comment = BookComment.find(params[:id])
-        @comment.destroy
+        comment = BookComment.find(params[:id])
+        @comment =BookComment.new
+        comment.destroy
     end
 
     private

@@ -8,6 +8,9 @@
         <tr>
           <th>introduction</th><th align="left"><%= user.introduction %></th>
         </tr>
+        <tr>
+          <th>Post</th><td align="center" style="font-weight: bold;"><%= link_to user_path(user) do %><%= user.books.count %><% end %></th>
+        </tr>
         <tr><h6><th>follow</th><td align="center" style="font-weight: bold;"><%= link_to following_user_path(@user), style:"color:#1e90ff;" do %><%= @user.follower.count %><% end %></td></h6></tr>
         <tr><h6><th>follower</th><td align="center" style="font-weight: bold;"><%= link_to followers_user_path(@user), style:"color:#1e90ff;" do %><%= @user.followed.count %><% end %></td></h6></tr>
   </table>
