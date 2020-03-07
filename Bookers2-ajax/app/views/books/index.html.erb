@@ -18,7 +18,9 @@
             <%= render 'books/new', book: @book, user: @user %>
         </div>
         <div class="col-xs-9">
-          <h2>Books</h2>
+          <h2>Books（All <%= @book_all.count %> Posts）</h2>
+          <div style="font-size:15px;">All <%= @books.count %> Items in this page</div>
+            <%= paginate @books, class: "paginate" %>
             <table ~~~ class="table">
                <colgroup>
                  <col style="width:10%;">
@@ -36,8 +38,8 @@
                 <td>コメント数：<%= book.book_comments.count %></td>
                 </tr>
                 <% end %>
-                <%= paginate @books, class: "paginate" %>
             </table>
+          <%= paginate @books, class: "paginate" %>
         </div>
 
     </div>

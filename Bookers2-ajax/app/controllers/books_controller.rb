@@ -10,6 +10,7 @@ class BooksController < ApplicationController
         @books = Book.page(params[:page]).reverse_order
         @book = Book.new
         @user = current_user
+        @book_all = Book.all
 	end
 
 	def create
@@ -21,6 +22,7 @@ class BooksController < ApplicationController
              redirect_to book_path(@book)
           else
              @books = Book.page(params[:page]).reverse_order
+             @book_all = Book.all
              @user = current_user
              render 'index'
           end
