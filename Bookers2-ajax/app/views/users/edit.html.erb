@@ -2,7 +2,7 @@
   <div class="row">
   <div class="col-lg-1"></div>
   <div class="col-lg-11">
-
+<div>
 <h2>User info</h2>
 
     <%= form_for(@user) do |f| %>
@@ -33,5 +33,7 @@
         <%= f.submit "Update User" %><% end %>
 
     <% end %>
-  </div>
+</div>
+    <%= link_to'パスワード変更', edit_user_registration_path(@user) %>
+      </div>
 </div>
